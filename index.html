@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Image Classifier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sport Image Classifier</h1>
+        <p class="subtitle">Upload or drag & drop an image to identify the sport</p>
+        
+        <div class="upload-area" id="uploadArea">
+            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+            <p class="upload-text">Drag & drop an image here</p>
+            <p class="upload-subtext">or</p>
+            <button class="upload-button" id="uploadButton">Choose File</button>
+            <input type="file" id="fileInput" accept="image/*" hidden>
+        </div>
+
+        <div class="preview-area" id="previewArea" style="display: none;">
+            <img id="previewImage" src="" alt="Preview">
+            <button class="clear-button" id="clearButton">Clear</button>
+        </div>
+
+        <div class="result-area" id="resultArea" style="display: none;">
+            <h2>Prediction</h2>
+            <div class="prediction-card">
+                <div class="prediction-sport" id="predictionSport">Basketball</div>
+                <div class="prediction-confidence" id="predictionConfidence">95%</div>
+            </div>
+            <div class="loader" id="loader" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
