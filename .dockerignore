@@ -1,0 +1,23 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+
+# Documentation
+README.md
+
+# Unused files
+index.html
+static/script.js
+static/style.css
+requirements.txt
