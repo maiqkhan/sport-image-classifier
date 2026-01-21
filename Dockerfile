@@ -6,14 +6,12 @@ WORKDIR /app
 
 ENV PATH="/app/.venv/bin:$PATH"
 
-COPY .python-version pyproject.toml uv.lock ./
+RUN uv init --python python3.12
 
-RUN uv sync --locked
+RUN uv add jinja2==3.1.6 fastapi==0.109.0 uvicorn==0.27.0 onnxruntime==1.23.2 pillow==10.2.0 numpy==1.26.3 python-multipart==0.0.6
 
-COPY . .
+COPY app/. .
 
-# Expose the port the app runs on
 EXPOSE 8000
 
-# Command to run the application
 ENTRYPOINT ["uvicorn", "main:app", "--host" , "0.0.0.0", "--port", "8000"]
